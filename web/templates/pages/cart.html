@@ -1,0 +1,73 @@
+{% extends "pages\base.html" %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="{% static 'style/base.css' %}" rel="stylesheet" />
+    {% block title %} CART {% endblock %}
+  </head>
+  <body>
+    {% block cart_content %}
+    <div class="cart_content">
+      <div class="container mt-5">
+        <div class="row my-4">
+          <div class="col">
+            <a href="/"
+              ><button type="button" class="btn btn-info">
+                <i class="bi bi-arrow-left"></i></button
+            ></a>
+          </div>
+        </div>
+        <div class="row my-4">
+          <div class="col">
+            Sản phẩm: <strong>{{order.get_cart_items}}</strong>
+          </div>
+          <div class="col">
+            Total: <strong>{{order.get_cart_total}}</strong>
+          </div>
+          <div class="col">
+            <a href="/checkout"
+              ><div class="btn btn-primary">Thanh toán</div></a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="container mt-5">
+        <div class="row my-4 text-danger">
+          <div class="col"></div>
+          <div class="col">Tên sản phẩm</div>
+          <div class="col">Giá</div>
+          <div class="col">Số lượng</div>
+          <div class="col">Tổng giá tiền</div>
+        </div>
+        <br />
+        {% for item in items %}
+        <div class="row my-4 bg-light">
+          <div class="col">
+            <img src="{{item.product.ImageURL}}" class="w-50" />
+          </div>
+          <div class="col mt-4">{{item.product.name}}</div>
+          <div class="col mt-4">{{item.product.price}}VND</div>
+          <p class="col mt-4">{{item.quantity}}</p>
+          <div class="col">
+            <div
+              class="btn update-cart"
+              data-product="{{item.product.id}}"
+              data-action="add"
+            >
+              <i class="bi bi-caret-up-fill"></i>
+            </div>
+            <div
+              class="btn update-cart"
+              data-product="{{item.product.id}}"
+              data-action="remove"
+            >
+              <i class="bi bi-caret-down-fill"></i>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endblock cart_content %}
+  </body>
+</html>

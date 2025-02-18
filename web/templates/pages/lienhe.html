@@ -1,0 +1,52 @@
+{% extends "pages\base.html" %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="{% static 'style/base.css' %}" rel="stylesheet" />
+    {% block title %} LIÊN HỆ {% endblock %}
+  </head>
+  <body>
+    {% block lienhe %}
+    <div class="lienhe">
+      <div class="container">
+        <div class="row">
+          <img
+            src="https://i.pinimg.com/236x/06/49/ef/0649ef9931c38cb4813cc178519cf064.jpg"
+            alt=""
+          />
+        </div>
+        <div class="row">
+          <p>Làm sao để liên hệ Chăm sóc Khách hàng</p>
+          <ol>
+            <li>
+              Gọi tổng đài Shopee thông qua Trung tâm trợ giúp trên ứng dụng
+              Shopee (miễn phí)
+            </li>
+            <li>Chat với Tép thám tử (hỗ trợ 24/7)</li>
+            <li>Chat với Nhân viên hỗ trợ:</li>
+            <li>
+              Gọi điện thoại đến Tổng đài CSKH Shopee theo số 1900 1221 (cước
+              phí 1.000 VNĐ/phút)
+            </li>
+          </ol>
+        </div>
+        <div class="row">
+          <p>Bài viết có hữu ích cho bạn không?</p>
+          <div class="row">
+            <div class="col">
+              <button class="btn">
+                <i class="bi bi-hand-thumbs-up"></i>Có
+              </button>
+            </div>
+            <div class="col">
+              <button class="btn">
+                <i class="bi bi-hand-thumbs-down"></i>Không
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>

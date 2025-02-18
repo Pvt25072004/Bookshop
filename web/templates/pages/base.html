@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <link
+      rel="stylesheet"
+      href="{% static 'css/bootstrap.min.css' %}"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+    <link href="{% static 'style/base.css' %}" rel="stylesheet" />
+    <link rel="icon" type="img/x-icon" href="{% static 'images/logo.png' %}" />
+    <script type="text/javascript">
+      var user = "{{request.user}}";
+      function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== "") {
+          const cookies = document.cookie.split(";");
+          for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === name + "=") {
+              cookieValue = decodeURIComponent(
+                cookie.substring(name.length + 1)
+              );
+              break;
+            }
+          }
+        }
+        return cookieValue;
+      }
+      const csrftoken = getCookie("csrftoken");
+    </script>
+    <title>{% block title %}SHOP VIET{% endblock %}</title>
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand mx-auto text-white" href="/"
+            ><img
+              src="{% static 'images/logo.png' %}"
+              width="70"
+              height="70"
+            />SHOPVIET</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="bi bi-list-task"></i>
+          </button>
+          {% comment %} menu {% endcomment %}
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 nav-underline">
+              <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" href="/"
+                  >Trang chủ</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link text-white dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Sản phẩm
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="/thieunhi">Thiếu nhi</a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li><a class="dropdown-item" href="/tamly">Tâm lý</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="/vientuong"
+                      >Văn học viễn tưởng</a
+                    >
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="/kinhdi">Kinh dị bí ẩn</a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="/tongiao">Tôn giáo</a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="/nauan">Nấu ăn</a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="/congnghe">Công nghệ</a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="/camhung">Truyền cảm hứng</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="/intro">Giới thiệu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="/chinhsach">Chính sách</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="/lienhe">Liên hệ</a>
+              </li>
+            </ul>
+            {% comment %} search {% endcomment %}
+            <nav class="navbar bg-body-tertiary rounded">
+              <div class="container-fluid">
+                <form class="d-flex" role="search">
+                  <input
+                    class="form-control me-2"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  <button class="btn btn-outline-success" type="submit">
+                    <i class="bi bi-search"></i>
+                  </button>
+                </form>
+              </div>
+            </nav>
+            {% comment %} down {% endcomment %}
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-person-circle"></i>
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <button class="dropdown-item" type="button">
+                    <a href="/checkout" class="btn btn-outline-secondary"
+                      >Thanh toán</a
+                    >
+                  </button>
+                </li>
+                <li>
+                  <button class="dropdown-item" type="button">
+                    <a href="/addinfo" class="btn btn-outline-secondary"
+                      >Cập nhật địa chỉ</a
+                    >
+                  </button>
+                </li>
+              </ul>
+            </div>
+            {% comment %} cart {% endcomment %}
+            <div>
+              <a href="/cart">
+                <div class="btn btn-primary">
+                  <i class="bi bi-cart3"
+                    ><i id="cart-total">{{cartItems}}</i></i
+                  >
+                </div>
+              </a>
+            </div>
+            {% comment %} account {% endcomment %}
+            <form class="d-flex nav-personal">
+              <a href="/login" class="btn btn-outline-light text-danger"
+                >Đăng nhập</a
+              >
+              <a href="/register" class="btn btn-outline-light text-danger"
+                >Đăng ký</a
+              >
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- body_home -->
+    {% block carousel_content %}{%endblock %} {% block home %}{%endblock %}
+    <!-- cart -->
+    {% block cart_content %}{% endblock %}
+    <!-- checkout -->
+    {% block checkout_content %}{% endblock %}
+    <!-- addnewinfoship -->
+    {% block addinfo %}{% endblock %}
+    <!-- register -->
+    {% block register %}{% endblock %}
+    <!-- login -->
+    {% block login %}{% endblock %}
+    <!-- camhung -->
+    {% block camhung %}{% endblock %}
+    <!-- congnghe -->
+    {% block congnghe %}{% endblock %}
+    <!-- kinhdi -->
+    {% block kinhdi %}{% endblock %}
+    <!-- nauan -->
+    {% block nauan %}{% endblock %}
+    <!-- tamly -->
+    {% block tamly %}{% endblock %}
+    <!-- thieunhi -->
+    {% block thieunhi %}{% endblock %}
+    <!-- tongiao -->
+    {% block tongiao %}{% endblock %}
+    <!-- vientuong -->
+    {% block vientuong %}{% endblock %}
+    <!-- intro -->
+    {% block intro %}{% endblock %}
+    <!-- lienhe -->
+    {% block lienhe %}{% endblock %}
+    <!-- chinhsach -->
+    {% block chinhsach %}{% endblock %}
+    <!-- footer -->
+    <footer class="bg-light footer mt-5">
+      <div class="container text-center">
+        <div class="row">
+          {% comment %} col 1 {% endcomment %}
+          <div class="col text-start">
+            <p class="h5 text-success">HỖ TRỢ KHÁCH HÀNG</p>
+            <ul class="list-unstyled footer__list">
+              <li class="">
+                <a href="" class="text-decoration-none text-danger-emphasis"
+                  >Trung tâm trợ giúp</a
+                >
+              </li>
+              <li class="">
+                <a href="" class="text-decoration-none text-danger-emphasis"
+                  >Hướng dẫn mua hàng</a
+                >
+              </li>
+              <li class="">
+                <a href="" class="text-decoration-none text-danger-emphasis"
+                  >Hướng dẫn bán hàng</a
+                >
+              </li>
+              <li class="">
+                <a href="" class="text-decoration-none text-danger-emphasis"
+                  >Chính sách đổi trả</a
+                >
+              </li>
+              <li class="">
+                <a href="" class="text-decoration-none text-danger-emphasis"
+                  >Hướng dẫn trả góp</a
+                >
+              </li>
+              <li class="">
+                <a href="" class="text-decoration-none text-danger-emphasis"
+                  >Chăm sóc khách hàng</a
+                >
+              </li>
+              <li class="">
+                <a href="" class="text-decoration-none text-danger-emphasis"
+                  >Chính sách bảo hành</a
+                >
+              </li>
+            </ul>
+          </div>
+          {% comment %} col 2 {% endcomment %}
+          <div class="col text-start">
+            <p class="h5 text-success">VỀ SHOPVIET</p>
+            <ul class="list-unstyled">
+              <li class="my-1">
+                <a href="" class="text-decoration-none text-danger-emphasis"
+                  >Giới thiệu về SHOPVIET</a
+                >
+              </li>
+              <li class="my-1">
+                <a href="" class="text-decoration-none text-danger-emphasis"
+                  >Tuyển dụng</a
+                >
+              </li>
+              <li class="my-1">
+                <a href="" class="text-decoration-none text-danger-emphasis"
+                  >Điều khoản SHOPVIET</a
+                >
+              </li>
+              <li class="my-1">
+                <a href="" class="text-decoration-none text-danger-emphasis"
+                  >Chính sách bảo mật</a
+                >
+              </li>
+              <li class="my-1">
+                <a href="" class="text-decoration-none text-danger-emphasis"
+                  >Tiếp thị liên kết SHOPVIET</a
+                >
+              </li>
+              <li class="my-1">
+                <a href="" class="text-decoration-none text-danger-emphasis"
+                  >Bán hàng doanh nghiệp</a
+                >
+              </li>
+              <li class="my-1">
+                <a href="" class="text-decoration-none text-danger-emphasis"
+                  >Điều kiện vận chuyển</a
+                >
+              </li>
+            </ul>
+          </div>
+          {% comment %} col 3 {% endcomment %}
+          <div class="col text-start">
+            <div class="row">
+              <p class="h5 text-success">HỢP TÁC VÀ LIÊN KẾT</p>
+              <a href="" class="text-decoration-none text-danger-emphasis"
+                >Quy chế hoạt động Sàn GDTMDT</a
+              >
+              <a href="" class="text-decoration-none text-danger-emphasis"
+                >Báng hàng cùng Tiki</a
+              >
+              <a href="" class="text-decoration-none text-danger-emphasis"
+                >Báng hàng cùng Shopee</a
+              >
+            </div>
+            <div class="row my-4">
+              <p class="h5 text-success">CHỨNG NHẬN BỞI</p>
+              <div class="col">
+                <img
+                  src="{% static 'images/bo-cong-thuong.png' %}"
+                  width="30"
+                  height="30"
+                />
+              </div>
+              <div class="col">
+                <img
+                  src="{% static 'images/chungnhan.png' %}"
+                  width="30"
+                  height="30"
+                />
+              </div>
+              <div class="col">
+                <img
+                  src="{% static 'images/bct.jpg' %}"
+                  width="90"
+                  height="30"
+                />
+              </div>
+            </div>
+          </div>
+          {% comment %} col 4 {% endcomment %}
+          <div class="col mx-1 text-start">
+            <p class="h5 text-success">PHƯƠNG THỨC THANH TOÁN</p>
+            <div class="row my-4">
+              <div class="col">
+                <img
+                  src="{% static 'images/debit-card.png' %}"
+                  width="30"
+                  height="30"
+                />
+              </div>
+              <div class="col">
+                <img
+                  src="{% static 'images/jcb.jpg' %}"
+                  width="30"
+                  height="30"
+                />
+              </div>
+              <div class="col">
+                <img
+                  src="{% static 'images/visa.png' %}"
+                  width="30"
+                  height="30"
+                />
+              </div>
+              <div class="col">
+                <img
+                  src="{% static 'images/vnpay.png' %}"
+                  width="30"
+                  height="30"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <img
+                  src="{% static 'images/zalopay.png' %}"
+                  width="30"
+                  height="30"
+                />
+              </div>
+              <div class="col">
+                <img
+                  src="{% static 'images/vtm.png' %}"
+                  width="30"
+                  height="30"
+                />
+              </div>
+              <div class="col">
+                <img
+                  src="{% static 'images/money.png' %}"
+                  width="30"
+                  height="30"
+                />
+              </div>
+              <div class="col"></div>
+            </div>
+          </div>
+          {% comment %} col 5 {% endcomment %}
+          <div class="col text-start">
+            <div class="row">
+              <p class="h5 text-success">THEO DÕI CHÚNG TÔI TRÊN</p>
+              <div class="col">
+                <button class="btn">
+                  <i class="bi bi-facebook text-primary"></i>
+                </button>
+              </div>
+              <div class="col">
+                <button class="btn">
+                  <i class="bi bi-twitter text-info"></i>
+                </button>
+              </div>
+              <div class="col">
+                <button class="btn">
+                  <i class="bi bi-instagram"></i>
+                </button>
+              </div>
+              <div class="col">
+                <button class="btn">
+                  <i class="bi bi-youtube text-danger"></i>
+                </button>
+              </div>
+            </div>
+            <div class="row">
+              <p class="h5 text-success my-4">TẢI ỨNG DỤNG SHOPVIET NGAY NÀO</p>
+              <div class="col">
+                <img
+                  src="{% static 'images/QR_CODE.jpg' %}"
+                  width="120"
+                  height="120"
+                />
+              </div>
+              <div class="col">
+                <div class="row">
+                  <img src="{% static 'images/App_store.jpg' %}" class="my-4" />
+                  <img src="{% static 'images/CH_play.jpg' %}" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="{% static 'js/cart.js' %}"></script>
+  </body>
+</html>

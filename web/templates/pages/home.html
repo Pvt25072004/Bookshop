@@ -1,0 +1,269 @@
+{% extends "pages\base.html" %} {% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="{% static 'style/base.css' %}" rel="stylesheet" />
+    {% block title %} SHOPVIET {% endblock %}
+  </head>
+  <body>
+    {% block carousel_content %}s
+    <div
+      id="carouselExampleIndicators"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner mt-4">
+        <div class="carousel-item active" data-bs-interval="1000">
+          <img
+            src="{% static 'images/banner1.png' %}"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="{% static 'images/banner2.png' %}"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="{% static 'images/banner3.png' %}"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="{% static 'images/banner4.png' %}"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="{% static 'images/banner5.png' %}"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-8">
+          <img
+            src="{% static 'images/trietly.jpg' %}"
+            class="w-3"
+            width="800"
+            height="500"
+          />
+        </div>
+        <div class="col-4">
+          <p class="h6 text-danger-emphasis">
+            Sách là cửa sổ tới thế giới: Sách mở ra một thế giới rộng lớn của
+            kiến thức và hiểu biết, giúp con người tiếp cận với văn hóa, lịch
+            sử, khoa học, triết lý, và nhiều lĩnh vực khác của nhân loại. Qua
+            sách, chúng ta có thể khám phá những nền văn hóa xa lạ, những tri
+            thức mới mẻ, và những ý tưởng sáng tạo.
+          </p>
+          <p class="h6 text-danger-emphasis">
+            Sách và sự phát triển cá nhân: Đọc sách giúp phát triển các kỹ năng
+            như đọc hiểu, tư duy phản biện, và khả năng giao tiếp. Ngoài ra,
+            sách còn giúp chúng ta phát triển về mặt cảm xúc, thông qua việc
+            đồng cảm với các nhân vật và tình huống trong truyện.
+          </p>
+          <p class="h6 text-danger-emphasis">
+            Sách làm phong phú tâm hồn: Sách không chỉ bổ ích về mặt thông tin
+            mà còn giúp làm phong phú tâm hồn. Qua sách, chúng ta có thể trải
+            nghiệm những cảm xúc sâu sắc, từ niềm vui, sự kích thích, cho đến
+            nỗi buồn và sự cảm thông.
+          </p>
+          <p class="h6 text-danger-emphasis">
+            Sách là nguồn cảm hứng: Đối với nhiều người, sách là nguồn cảm hứng
+            vô tận. Câu chuyện về những nhân vật, dù thật hay hư cấu, có thể
+            truyền cảm hứng, khích lệ tinh thần, và thậm chí là thay đổi cuộc
+            đời người đọc.
+          </p>
+        </div>
+      </div>
+    </div>
+    {% endblock %} {% block home %}
+    <div class="container text-center mt-5">
+      <p class="h4 text-danger">SẢN PHẨM</p>
+      <div class="row">
+        {% for product in products %}
+        <div class="col-md-3">
+          <div class="card my-3" style="width: 18rem">
+            <img src="{{product.ImageURL}}" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title">{{product.name}}</h5>
+              <p class="card-text">{{product.price}}VND</p>
+              <a
+                href="#"
+                class="btn btn-primary update-cart"
+                data-product="{{product.id}}"
+                data-action="add"
+                ><i class="bi bi-cart-plus"></i
+              ></a>
+              <a href="#" class="btn btn-primary"><i class="bi bi-eye"></i></a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <!-- thinh hanh -->
+    <div class="container mt-5">
+      <p class="h5">THỊNH HÀNH</p>
+      <div class="row">
+        <div class="col">
+          <img
+            src="{% static 'images/thinhhanh1.jpg' %}"
+            class="w-3"
+            width="400px"
+            height="400px"
+          />
+        </div>
+        <div class="col">
+          <img
+            src="{% static 'images/thinhhanh2.jpg' %}"
+            class="w-3"
+            width="400px"
+            height="400px"
+          />
+        </div>
+        <div class="col">
+          <img
+            src="{% static 'images/thinhhanh3.jpg' %}"
+            class="w-3"
+            width="400px"
+            height="400px"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- top ban chay -->
+    <div class="container mt-5">
+      <p class="h5">TOP BÁN CHẠY</p>
+      <div class="row">
+        <div class="col">
+          <div class="col-md-3">
+            <div class="card" style="width: 18rem">
+              <img
+                src="{% static 'images/banchay1.jpg' %}"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title">I could be wrong but i doubt it</h5>
+                <p class="card-text">100000VND</p>
+                <a
+                  href="#"
+                  class="btn btn-primary update-cart"
+                  data-product="{{product.id}}"
+                  data-action="add"
+                  ><i class="bi bi-cart-plus"></i
+                ></a>
+                <a href="#" class="btn btn-primary"
+                  ><i class="bi bi-eye"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="col-md-3">
+            <div class="card" style="width: 18rem">
+              <img
+                src="{% static 'images/banchay2.jpg' %}"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Testigo de mi Muerte</h5>
+                <p class="card-text">390000VND</p>
+                <a
+                  href="#"
+                  class="btn btn-primary update-cart"
+                  data-product="{{product.id}}"
+                  data-action="add"
+                  ><i class="bi bi-cart-plus"></i
+                ></a>
+                <a href="#" class="btn btn-primary"
+                  ><i class="bi bi-eye"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="col-md-3">
+            <div class="card" style="width: 18rem">
+              <img
+                src="{% static 'images/banchay3.jpg' %}"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Doraemon</h5>
+                <p class="card-text">90000VND</p>
+                <a
+                  href="#"
+                  class="btn btn-primary update-cart"
+                  data-product="{{product.id}}"
+                  data-action="add"
+                  ><i class="bi bi-cart-plus"></i
+                ></a>
+                <a href="#" class="btn btn-primary"
+                  ><i class="bi bi-eye"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="col-md-3">
+            <div class="card" style="width: 18rem">
+              <img
+                src="{% static 'images/banchay4.jpg' %}"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Conan</h5>
+                <p class="card-text">120000VND</p>
+                <a
+                  href="#"
+                  class="btn btn-primary update-cart"
+                  data-product="{{product.id}}"
+                  data-action="add"
+                  ><i class="bi bi-cart-plus"></i
+                ></a>
+                <a href="#" class="btn btn-primary"
+                  ><i class="bi bi-eye"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>

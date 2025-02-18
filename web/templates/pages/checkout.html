@@ -1,0 +1,98 @@
+{% extends "pages\base.html" %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="{% static 'style/base.css' %}" rel="stylesheet" />
+    {% block title %} CHECKOUT {% endblock %}
+  </head>
+  <body>
+    {% block checkout_content %}
+    <div class="checkout_content">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p>Địa chỉ nhận hàng</p>
+            <p>
+              <strong>Phạm Văn Tiền (+84) 339668760</strong> 151 Hồ Nguyên
+              Trừng, Phường Khuê Trung, Quận Cẩm Lệ, Đà Nẵng
+              <button class="btn btn-outline-danger">Mặc định</button>
+              <a href="/addinfo" class="btn btn-outline-info">Thay đổi</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <a href="/cart" class="btn btn-outline-dark">Back to cart</a>
+        <p>Oder</p>
+        <div class="row bg-light">
+          {% for item in items %}
+          <div class="col">
+            <img src="{{item.product.ImageURL}}" class="w-50" />
+          </div>
+          <div class="col">{{item.product.name}}</div>
+          <div class="col">{{item.product.price}}VND</div>
+          <div class="col">{{item.quantity}}</div>
+          {% endfor %}
+        </div>
+        <div class="row">
+          <div class="col">Số lượng: {{order.get_cart_items}}</div>
+        </div>
+        <div class="row">
+          <div class="col">Tổng giá tiền:{{order.get_cart_total}}VND</div>
+        </div>
+      </div>
+      <!-- form register information ship-->
+      <div class="container">
+        <p class="h5">Địa chỉ</p>
+        <div class="row my-4">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Họ và tên" />
+          </div>
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Số điện thoại"
+            />
+          </div>
+        </div>
+        <div class="row my-4">
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Tỉnh/Thành phố, Quận/Huyện, Phường/Xã"
+            />
+          </div>
+        </div>
+        <div class="row my-4">
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Địa chỉ cụ thể"
+            />
+          </div>
+        </div>
+        <div class="row my-4 text-center">
+          <div class="col">
+            <div class="btn bg-primary-subtle">+ Thêm vị trí</div>
+          </div>
+        </div>
+        <div class="row my-4">
+          <p>Loại địa chỉ:</p>
+          <div class="col text-center">
+            <div class="btn bg-primary-subtle">Nhà riêng</div>
+            <div class="btn bg-primary-subtle">Văn phòng</div>
+          </div>
+        </div>
+        <div class="row my-4">
+          <div class="col">
+            <div class="btn bg-primary">Hoàn thành</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>

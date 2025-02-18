@@ -1,0 +1,32 @@
+{% extends "pages\base.html" %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="{% static 'style/base.css' %}" rel="stylesheet" />
+    {% block title %} REGISTER {% endblock %}
+  </head>
+  <body>
+    {% block register %}
+    <div class="register bg-info text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <img
+              src="{% static 'images/logo.png' %}"
+              alt=""
+              width="400"
+              height="400"
+            />
+          </div>
+          <div class="col">
+            <form action="" method="POST">
+              {% csrf_token %} {{form.as_p}}
+              <input name="Create user" type="submit" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>

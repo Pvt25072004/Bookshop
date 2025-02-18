@@ -1,0 +1,67 @@
+{% extends "pages\base.html" %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="{% static 'style/base.css' %}" rel="stylesheet" />
+    {% block title %} NẤU ĂN {% endblock %}
+  </head>
+  <body>
+    {% block chinhsach %}
+    <div class="chinhsach">
+      <div class="container">
+        <div class="row">
+          <img
+            src="https://i.pinimg.com/236x/c5/a4/8b/c5a48b0b5f056701cf7e98e2c86d963f.jpg"
+            alt=""
+          />
+        </div>
+        <div class="row">
+          <p>CHÍNH SÁCH BẢO MẬT</p>
+          <ul>
+            <li>
+              "Dữ Liệu Cá Nhân" hay "dữ liệu cá nhân" có nghĩa là dữ liệu, dù
+              đúng hay không, về một cá nhân mà thông qua đó có thể được xác
+              định được danh tính, hoặc từ dữ liệu đó và thông tin khác mà một
+              tổ chức có hoặc có khả năng tiếp cận. Các ví dụ thường gặp về dữ
+              liệu cá nhân có thể gồm có tên, số chứng minh nhân dân và thông
+              tin liên hệ.
+            </li>
+            <li>
+              Bằng việc sử dụng Các Dịch Vụ, đăng ký một tài khoản với chúng tôi
+              hoặc truy cập Nền tảng, bạn xác nhận và đồng ý rằng bạn chấp nhận
+              các phương pháp, yêu cầu, và/hoặc chính sách được mô tả trong
+              Chính sách bảo mật này, và theo đây bạn xác nhận bạn đã biết rõ và
+              đồng ý toàn bộ cho phép chúng tôi thu thập, sử dụng, tiết lộ
+              và/hoặc xử lý dữ liệu cá nhân của bạn như mô tả trong đây.
+            </li>
+            <li>
+              Chính sách này áp dụng cùng với các thông báo, điều khoản hợp
+              đồng, điều khoản chấp thuận khác áp dụng liên quan đến việc chúng
+              tôi thu thập, lưu trữ, sử dụng, tiết lộ và/hoặc xử lý dữ liệu cá
+              nhân của bạn và không nhằm ghi đè những thông báo hoặc các điều
+              khoản đó trừ khi chúng tôi có tuyên bố ràng khác.
+            </li>
+            <li>
+              Chính sách này được áp dụng cho cả Người bán và Người mua đang sử
+              dụng Dịch vụ trừ khi có tuyên bố rõ ràng ngược lại.
+            </li>
+          </ul>
+        </div>
+        <div class="row">
+          <p>SHOPVIET SẼ THU THẬP NHỮNG DỮ LIỆU GÌ?</p>
+          <ul>
+            <li>họ tên;</li>
+            <li>địa chỉ email;</li>
+            <li>ngày sinh;</li>
+            <li>địa chỉ thanh toán và/hoặc giao nhận hàng hóa;</li>
+            <li>số điện thoại;</li>
+            <li>tài khoản ngân hàng và thông tin thanh toán giới tính;</li>
+            <li>giới tính;</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    {% endblock %}
+  </body>
+</html>

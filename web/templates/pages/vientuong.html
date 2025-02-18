@@ -1,0 +1,37 @@
+{% extends "pages\base.html" %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="{% static 'style/base.css' %}" rel="stylesheet" />
+    {% block title %} VIỄN TƯỞNG {% endblock %}
+  </head>
+  <body>
+    {% block vientuong %}
+    <div class="vientuong">
+      <div class="container">
+        <div class="row">
+          <div class="card my-3" style="width: 18rem">
+            <img
+              src="{% static 'images/vientuong.jpg' %}"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kỷ nguyên siêu tân tinh</h5>
+              <p class="card-text">250.000VND</p>
+              <a
+                href="#"
+                class="btn btn-primary update-cart"
+                data-product="{{product.id}}"
+                data-action="add"
+                ><i class="bi bi-cart-plus"></i
+              ></a>
+              <a href="#" class="btn btn-primary"><i class="bi bi-eye"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endblock %}
+  </body>
+</html>

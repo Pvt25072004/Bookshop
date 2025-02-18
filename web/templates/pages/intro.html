@@ -1,0 +1,59 @@
+{% extends "pages\base.html" %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="{% static 'style/base.css' %}" rel="stylesheet" />
+    {% block title %} GIỚI THIỆU {% endblock %}
+  </head>
+  <body>
+    {% block intro %}
+    <div class="intro">
+      <div class="container">
+        <div class="row">
+          <img
+            src="https://i.pinimg.com/564x/0e/88/2c/0e882cb6cd424a1a43bf572912a86425.jpg"
+            alt=""
+          />
+        </div>
+        <div class="row">
+          <p>
+            VIÉTHOP là phần mềm điện tử hàng đầu tại Đông Nam Á và Đài Loan.
+          </p>
+          <p>
+            Ra mắt vào năm 2024, SHOPVIET mang đến cho người dùng trong khu vực
+            trải nghiệm mua sắm sách trực tuyến đơn giản, an toàn và nhanh chóng
+            thông qua hệ thống hỗ trợ thanh toán và vận hành vững mạnh.
+          </p>
+          <p>
+            Chúng tôi tin rằng trải nghiệm mua sắm trực tuyến cần đơn giản, dễ
+            dàng và mang lại niềm vui cho người dùng. Sứ mệnh này cũng là nguồn
+            cảm hứng thúc đẩy chúng tôi phát triển từng ngày.
+          </p>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>Mục tiêu của chúng tôi</p>
+            <p>
+              SHOPVIET mong muốn góp phần làm cho thế giới trở nên tốt đẹp hơn
+              bằng sức mạnh công nghệ thông qua việc kết nối cộng đồng người mua
+              và người bán.
+            </p>
+          </div>
+          <div class="col">
+            <p>Định vị của chúng tôi</p>
+            <p>
+              Thông qua SHOPVIET, người dùng Internet trên toàn khu vực có thể
+              trải nghiệm mua sắm trực tuyến với các sản phẩm đa dạng, kết nối
+              với cộng đồng người bán, và tận hưởng quá trình nhận hàng liền
+              mạch.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <img src="{% static 'images/map1.jpg' %}" alt="" />
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>

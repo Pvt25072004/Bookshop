@@ -1,0 +1,54 @@
+{% extends "pages\base.html" %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="{% static 'style/base.css' %}" rel="stylesheet" />
+    {% block title %} CÔNG NGHỆ {% endblock %}
+  </head>
+  <body>
+    {% block congnghe %}
+    <div class="congnghe">
+      <div class="container">
+        <div class="row">
+          <div class="card my-3" style="width: 18rem">
+            <img
+              src="{% static 'images/congnghe.jpg' %}"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Bộ não thứ 2</h5>
+              <p class="card-text">120.000VND</p>
+              <a
+                href="#"
+                class="btn btn-primary update-cart"
+                data-product="{{product.id}}"
+                data-action="add"
+                ><i class="bi bi-cart-plus"></i
+              ></a>
+              <a href="#" class="btn btn-primary"><i class="bi bi-eye"></i></a>
+            </div>
+          </div>
+          <div class="card my-3" style="width: 18rem">
+            <img
+              src="{% static 'images/congnghe2.jpg' %}"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Chat GPT</h5>
+              <p class="card-text">200.000VND</p>
+              <a
+                href="#"
+                class="btn btn-primary update-cart"
+                data-product="{{product.id}}"
+                data-action="add"
+                ><i class="bi bi-cart-plus"></i
+              ></a>
+              <a href="#" class="btn btn-primary"><i class="bi bi-eye"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>

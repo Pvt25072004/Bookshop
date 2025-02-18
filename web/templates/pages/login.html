@@ -1,0 +1,73 @@
+{% extends "pages\base.html" %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="{% static 'style/base.css' %}" rel="stylesheet" />
+    {% block title %} LOGIN {% endblock %}
+  </head>
+  <body>
+    {% block login %}
+    <div class="register bg-info text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <img
+              src="{% static 'images/logo.png' %}"
+              alt=""
+              width="400"
+              height="400"
+            />
+          </div>
+          <div class="col">
+            <p class="h4">Đăng nhập</p>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Họ và tên</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Mật khẩu</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder=""
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Nhập lại mật khẩu</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder=""
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Số điện thoại</label
+              >
+              <input
+                type="tel"
+                class="form-control"
+                id="exampleFormControlInput1"
+                maxlength="10"
+                placeholder="+84"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>

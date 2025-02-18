@@ -1,0 +1,83 @@
+{% extends "pages\base.html" %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="{% static 'style/base.css' %}" rel="stylesheet" />
+    {% block title %} ADD-INFO {% endblock %}
+  </head>
+  <body>
+    <!-- change information ship -->
+    {% block addinfo %}
+    <div class="add_info">
+      <div class="container">
+        <p class="h5">Địa chỉ mới</p>
+        <div class="row my-4">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Họ và tên" />
+          </div>
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Số điện thoại"
+            />
+          </div>
+        </div>
+        <div class="row my-4">
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Tỉnh/Thành phố, Quận/Huyện, Phường/Xã"
+            />
+          </div>
+        </div>
+        <div class="row my-4">
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Địa chỉ cụ thể"
+            />
+          </div>
+        </div>
+        <div class="row my-4 text-center">
+          <div class="col">
+            <div class="btn bg-primary-subtle">+ Thêm vị trí</div>
+          </div>
+        </div>
+        <div class="row my-4">
+          <p>Loại địa chỉ:</p>
+          <div class="col text-center">
+            <div class="btn bg-primary-subtle">Nhà riêng</div>
+            <div class="btn bg-primary-subtle">Văn phòng</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="mb-3 form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="exampleCheck1"
+            />
+            <label class="form-check-label" for="exampleCheck1"
+              >Đặt làm địa chỉ mặc định</label
+            >
+          </div>
+        </div>
+        <div class="row my-4">
+          <div class="col">
+            <div class="btn bg-primary"><a href="/checkout">Hủy</a></div>
+            <div class="btn bg-primary">Hoàn thành</div>
+          </div>
+        </div>
+        <img
+          src="{% static 'images/banner1.png' %}"
+          class="d-block w-100"
+          alt="..."
+        />
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>
