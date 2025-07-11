@@ -6,7 +6,7 @@
     {% block title %} SHOPVIET {% endblock %}
   </head>
   <body>
-    {% block carousel_content %}
+    {% block carousel_content %}s
     <div
       id="carouselExampleIndicators"
       class="carousel slide"
@@ -70,10 +70,15 @@
     </div>
     <div class="container mt-5">
       <div class="row">
-        <div class="col">
-          <img src="{% static 'images/trietly.jpg' %}" class="img-fluid" />
+        <div class="col-8">
+          <img
+            src="{% static 'images/trietly.jpg' %}"
+            class="w-3"
+            width="800"
+            height="500"
+          />
         </div>
-        <div class="col-md-4 col-12 mt-2">
+        <div class="col-4">
           <p class="h6 text-danger-emphasis">
             Sách là cửa sổ tới thế giới: Sách mở ra một thế giới rộng lớn của
             kiến thức và hiểu biết, giúp con người tiếp cận với văn hóa, lịch
@@ -91,10 +96,13 @@
             Sách làm phong phú tâm hồn: Sách không chỉ bổ ích về mặt thông tin
             mà còn giúp làm phong phú tâm hồn. Qua sách, chúng ta có thể trải
             nghiệm những cảm xúc sâu sắc, từ niềm vui, sự kích thích, cho đến
-            nỗi buồn và sự cảm thông. Sách là nguồn cảm hứng: Đối với nhiều
-            người, sách là nguồn cảm hứng vô tận. Câu chuyện về những nhân vật,
-            dù thật hay hư cấu, có thể truyền cảm hứng, khích lệ tinh thần, và
-            thậm chí là thay đổi cuộc đời người đọc.
+            nỗi buồn và sự cảm thông.
+          </p>
+          <p class="h6 text-danger-emphasis">
+            Sách là nguồn cảm hứng: Đối với nhiều người, sách là nguồn cảm hứng
+            vô tận. Câu chuyện về những nhân vật, dù thật hay hư cấu, có thể
+            truyền cảm hứng, khích lệ tinh thần, và thậm chí là thay đổi cuộc
+            đời người đọc.
           </p>
         </div>
       </div>
@@ -104,7 +112,7 @@
       <p class="h4 text-danger">SẢN PHẨM</p>
       <div class="row">
         {% for product in products %}
-        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+        <div class="col-md-3">
           <div class="card my-3" style="width: 18rem">
             <img src="{{product.ImageURL}}" class="card-img-top" />
             <div class="card-body">
@@ -118,9 +126,6 @@
                 ><i class="bi bi-cart-plus"></i
               ></a>
               <a href="#" class="btn btn-primary"><i class="bi bi-eye"></i></a>
-              <a href="#" class="btn btn-primary"
-                ><i class="bi bi-heart"></i
-              ></a>
             </div>
           </div>
         </div>
