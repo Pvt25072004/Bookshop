@@ -1,0 +1,31 @@
+{% extends "pages/base.html" %} {% load static %}
+<html lang="en">
+  <head>
+    <link href="{% static 'style/base.css' %}" rel="stylesheet" />
+    {% block title %} YÊU THÍCH {% endblock %}
+  </head>
+  <style>
+    .yeuthich {
+      margin-top: 200px;
+    }
+  </style>
+
+  <body>
+    {% block yeuthich %}
+    <div class="yeuthich">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-12">
+            <img
+              src="{% static 'images/emptyfavorite.png' %}"
+              alt=""
+              class="image-thumbnail"
+            />
+            <h1>Không có sản phẩm yêu thích.</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>
