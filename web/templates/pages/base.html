@@ -128,6 +128,9 @@
                 <a class="nav-link text-white" href="/intro">Giới thiệu</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link text-white" href="/yeuthich">Yêu thích</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link text-white" href="/chinhsach">Chính sách</a>
               </li>
               <li class="nav-item">
@@ -143,6 +146,7 @@
                     type="search"
                     placeholder="Search"
                     aria-label="Search"
+                    name="search"
                   />
                   <button class="btn btn-outline-success" type="submit">
                     <i class="bi bi-search"></i>
@@ -234,6 +238,8 @@
     {% block lienhe %}{% endblock %}
     <!-- chinhsach -->
     {% block chinhsach %}{% endblock %}
+    <!-- yeuthich -->
+    {% block yeuthich %}{% endblock %}
     <!-- footer -->
     <footer class="bg-light footer mt-5">
       <div class="container text-center">
