@@ -21,6 +21,5 @@ urlpatterns = [
     path('intro/', views.intro),
     path('chinhsach/', views.chinhsach),
     path('lienhe/', views.lienhe),
-    path('yeuthich/', views.yeuthich),
 
 ]
