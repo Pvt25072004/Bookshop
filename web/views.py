@@ -214,3 +214,5 @@ def lienhe(request):
     products = Product.objects.all()
     context = {'products': products, 'cartItems': cartItems}
     return render(request, 'pages/lienhe.html', context)
+def yeuthich(request):
+    return render(request, 'pages/yeuthich.html')
