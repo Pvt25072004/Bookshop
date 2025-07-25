@@ -1,15 +1,84 @@
 {% extends "pages/base.html" %} {% load static %}
 <html lang="en">
-  <head>
-    <link href="{% static 'style/base.css' %}" rel="stylesheet" />
-    {% block title %} ĐƠN HÀNG {% endblock %}
-  </head>
 
-  <body>
-    {% block donhang %}
-    <div class="donhang">
-      <div class="container"></div>
+<head>
+  <link href="{% static 'style/base.css' %}" rel="stylesheet" />
+  {% block title %} ĐƠN HÀNG {% endblock %}
+</head>
+
+<body>
+  {% block donhang %}
+  <div class="donhang">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <div class="h1 text-danger-emphasis">Danh sách đơn hàng</div>
+        </div>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Tìm kiếm đơn hàng" aria-label="Search" />
+          <button class="btn btn-outline-success" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+      <div class="row mt-2 text-center border-bottom">
+        <div class="col">
+          <a class="nav-link pb-2 border-bottom border-3 border-success fw-bold text-success" href="#">Đang xử lý</a>
+        </div>
+        <div class="col">
+          <a class="nav-link pb-2 text-dark" href="#">Đang giao</a>
+        </div>
+        <div class="col">
+          <a class="nav-link pb-2 text-dark" href="#">Hoàn thành</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="card mt-1" style="width: 100rem;">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn btn-success">Hoàn thành</div>
+            <div class="text-success fs-5" style="cursor: pointer;">
+              <i class="bi bi-chat-dots"></i>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Cơm quê Quảng Ngãi</h5>
+            <div class="row">
+              <div class="col-2">
+                <img src="{% static 'images/chickenrice.png' %}" class="img-fluid" alt="...">
+              </div>
+              <div class="col-10">
+                <div class="h5">Cơm gà</div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="btn btn-primary" style="width: 10rem;">Go somewhere</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="card mt-1" style="width: 100rem;">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn btn-success">Hoàn thành</div>
+            <div class="text-success fs-5" style="cursor: pointer;">
+              <i class="bi bi-chat-dots"></i>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Cơm quê Quảng Ngãi</h5>
+            <div class="row">
+              <div class="col-2">
+                <img src="{% static 'images/chickenrice.png' %}" class="img-fluid" alt="...">
+              </div>
+              <div class="col-10">
+                <div class="h5">Cơm gà</div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="btn btn-primary" style="width: 10rem;">Go somewhere</a>
+        </div>
+      </div>
     </div>
-    {% endblock %}
-  </body>
+  </div>
+  {% endblock %}
+</body>
+
 </html>
