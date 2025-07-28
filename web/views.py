@@ -220,3 +220,5 @@ def donhang(request):
     return render(request, 'pages/donhang.html')
 def thongke(request):
     return render(request, 'pages/thongke.html')
+def personinfo(request):
+    return render(request, 'pages/personinfo.html')
