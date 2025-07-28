@@ -136,6 +136,9 @@
               <li class="nav-item">
                 <a class="nav-link text-white" href="/lienhe">Liên hệ</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="/thongke">Thống kê</a>
+              </li>
             </ul>
             {% comment %} search {% endcomment %}
             <nav class="navbar bg-body-tertiary rounded">
@@ -167,6 +170,13 @@
               <ul class="dropdown-menu">
                 <li>
                   <button class="dropdown-item" type="button">
+                    <a href="/personinfo" class="btn btn-outline-secondary"
+                      >Thông tin cá nhân</a
+                    >
+                  </button>
+                </li>
+                <li>
+                  <button class="dropdown-item" type="button">
                     <a href="/checkout" class="btn btn-outline-secondary"
                       >Thanh toán</a
                     >
@@ -176,6 +186,13 @@
                   <button class="dropdown-item" type="button">
                     <a href="/addinfo" class="btn btn-outline-secondary"
                       >Cập nhật địa chỉ</a
+                    >
+                  </button>
+                </li>
+                <li>
+                  <button class="dropdown-item" type="button">
+                    <a href="/donhang" class="btn btn-outline-secondary"
+                      >Đơn hàng của tôi</a
                     >
                   </button>
                 </li>
@@ -240,6 +257,10 @@
     {% block chinhsach %}{% endblock %}
     <!-- yeuthich -->
     {% block yeuthich %}{% endblock %}
+    <!-- thongke -->
+    {% block thongke %}{% endblock %}
+    <!-- donhang -->
+    {% block donhang %}{% endblock %}
     <!-- footer -->
     <footer class="bg-light footer mt-5">
       <div class="container text-center">

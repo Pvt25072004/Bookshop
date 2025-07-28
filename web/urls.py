@@ -22,5 +22,8 @@ urlpatterns = [
     path('chinhsach/', views.chinhsach),
     path('lienhe/', views.lienhe),
     path('yeuthich/', views.yeuthich),
+    path('thongke/', views.thongke),
+    path('donhang/', views.donhang),
+    path('personinfo/', views.personinfo),
 
 ]

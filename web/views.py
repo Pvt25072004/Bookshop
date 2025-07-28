@@ -216,3 +216,9 @@ def lienhe(request):
     return render(request, 'pages/lienhe.html', context)
 def yeuthich(request):
     return render(request, 'pages/yeuthich.html')
+def donhang(request):
+    return render(request, 'pages/donhang.html')
+def thongke(request):
+    return render(request, 'pages/thongke.html')
+def personinfo(request):
+    return render(request, 'pages/personinfo.html')

@@ -1,0 +1,15 @@
+{% extends "pages/base.html" %} {% load static %}
+<html lang="en">
+  <head>
+    <link href="{% static 'style/base.css' %}" rel="stylesheet" />
+    {% block title %} THỐNG KÊ {% endblock %}
+  </head>
+
+  <body>
+    {% block thongke %}
+    <div class="thongke">
+      <div class="container"></div>
+    </div>
+    {% endblock %}
+  </body>
+</html>
