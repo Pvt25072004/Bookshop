@@ -1,0 +1,163 @@
+{% extends 'pages/base.html' %} {% load static %} {% block content %}
+
+<div class="container my-5">
+  <h2 class="text-center mb-4">Hỗ Trợ Khách Hàng</h2>
+
+  <div class="row">
+    <!-- Thông tin liên hệ -->
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Thông Tin Liên Hệ</h4>
+          <ul class="list-unstyled">
+            <li class="mb-3">
+              <i class="fas fa-phone text-primary me-2"></i>
+              Hotline: <strong>1900 xxxx</strong> (8:00 - 22:00 hàng ngày)
+            </li>
+            <li class="mb-3">
+              <i class="fas fa-envelope text-primary me-2"></i>
+              Email: support@shopviet.com
+            </li>
+            <li class="mb-3">
+              <i class="fas fa-map-marker-alt text-primary me-2"></i>
+              Địa chỉ: 123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh
+            </li>
+            <li class="mb-3">
+              <i class="fab fa-facebook text-primary me-2"></i>
+              Facebook: facebook.com/shopviet
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Câu hỏi thường gặp -->
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Câu Hỏi Thường Gặp</h4>
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faq1"
+                >
+                  Làm sao để đặt hàng?
+                </button>
+              </h2>
+              <div
+                id="faq1"
+                class="accordion-collapse collapse show"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Bạn có thể dễ dàng đặt hàng bằng cách chọn sản phẩm, thêm vào
+                  giỏ hàng và tiến hành thanh toán. Đăng nhập tài khoản để có
+                  trải nghiệm mua sắm tốt nhất.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faq2"
+                >
+                  Thời gian giao hàng là bao lâu?
+                </button>
+              </h2>
+              <div
+                id="faq2"
+                class="accordion-collapse collapse"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Thời gian giao hàng thông thường từ 2-5 ngày làm việc tùy theo
+                  khu vực. Với đơn hàng nội thành, có thể nhận hàng trong 24h.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faq3"
+                >
+                  Chính sách đổi trả như thế nào?
+                </button>
+              </h2>
+              <div
+                id="faq3"
+                class="accordion-collapse collapse"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Shop chấp nhận đổi trả trong vòng 7 ngày với sản phẩm còn
+                  nguyên vẹn và đầy đủ phụ kiện. Vui lòng liên hệ hotline để
+                  được hướng dẫn chi tiết.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form liên hệ -->
+  <div class="row mt-4">
+    <div class="col-md-8 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title text-center">Gửi Yêu Cầu Hỗ Trợ</h4>
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Họ và tên</label>
+              <input type="text" class="form-control" id="name" required />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required />
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Số điện thoại</label>
+              <input type="tel" class="form-control" id="phone" required />
+            </div>
+            <div class="mb-3">
+              <label for="subject" class="form-label">Chủ đề</label>
+              <select class="form-select" id="subject" required>
+                <option value="">Chọn chủ đề</option>
+                <option value="order">Đơn hàng</option>
+                <option value="product">Sản phẩm</option>
+                <option value="shipping">Vận chuyển</option>
+                <option value="return">Đổi trả</option>
+                <option value="other">Khác</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Nội dung</label>
+              <textarea
+                class="form-control"
+                id="message"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Gửi yêu cầu</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

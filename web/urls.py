@@ -25,5 +25,5 @@ urlpatterns = [
     path('thongke/', views.thongke),
     path('donhang/', views.donhang),
     path('personinfo/', views.personinfo),
-
+    path('hotro/', views.hotro),
 ]

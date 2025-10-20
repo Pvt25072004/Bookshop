@@ -4,6 +4,17 @@ from .models import *
 import json
 from django.contrib.auth.forms import UserCreationForm
 
+def hotro(request):
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        order, created = Order.objects.get_or_create(customer=customer, finish=False)
+        cartItems = order.get_cart_items
+    else:
+        order = {'get_cart_items':0, 'get_cart_total': 0}
+        cartItems = order['get_cart_items']
+    context = {'cartItems': cartItems}
+    return render(request, 'pages/hotro.html', context)
+
 #pages == app 
 def home(request):
     if request.user.is_authenticated:
